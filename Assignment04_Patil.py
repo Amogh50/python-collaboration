@@ -5,7 +5,7 @@ tasks = []  # List to store tasks
 def add_task():
     task = input("Enter the new task: ")
     tasks.append({"task": task, "completed": False})
-    print(f"Task '{task}' added successfully\n")
+    print("Task " + task + " added successfully")
 #==============================================================================
 # function to view tasks
 def view_tasks():
@@ -14,8 +14,11 @@ def view_tasks():
         return
     print("\nTo-Do List:")
     for task in tasks:
-        status = "Done" if task["completed"] else "Not Done"
-        print(f"{task['task']} [{status}]")
+        if task["completed"]:
+            status = "Done"
+        else:
+            status = "Not Done"
+        print(task +": " + status)
     print()
 #==============================================================================
 # function to mark as complete
