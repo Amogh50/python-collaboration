@@ -1,11 +1,13 @@
 # To-Do List Program
 tasks = []  # List to store tasks
-
+#==============================================================================
+# function to add tasks
 def add_task():
     task = input("Enter the new task: ")
     tasks.append({"task": task, "completed": False})
     print(f"Task '{task}' added successfully\n")
-
+#==============================================================================
+# function to view tasks
 def view_tasks():
     if not tasks:
         print("No tasks available.\n")
@@ -15,7 +17,8 @@ def view_tasks():
         status = "Done" if task["completed"] else "Not Done"
         print(f"{task['task']} [{status}]")
     print()
-
+#==============================================================================
+# function to mark as complete
 def mark_completed():
     view_tasks()
     try:
@@ -27,7 +30,8 @@ def mark_completed():
             print("Invalid task number.\n")
     except ValueError:
         print("Please enter a valid number.\n")
-
+#==============================================================================
+# function to delete tasks
 def delete_task():
     """Delete a task from the list."""
     view_tasks()
@@ -40,7 +44,7 @@ def delete_task():
             print("Invalid task number.\n")
     except ValueError:
         print("Please enter a valid number.\n")
-
+#==============================================================================
 def first():
     while True:
         print("To-Do List Menu:")
